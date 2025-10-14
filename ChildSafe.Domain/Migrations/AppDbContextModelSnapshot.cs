@@ -48,7 +48,7 @@ namespace ChildSafe.Domain.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("Student");
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

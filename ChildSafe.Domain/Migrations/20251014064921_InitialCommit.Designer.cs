@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChildSafe.Domain.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250926122004_Initial_Commit")]
-    partial class Initial_Commit
+    [Migration("20251014064921_InitialCommit")]
+    partial class InitialCommit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,7 @@ namespace ChildSafe.Domain.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("Student");
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

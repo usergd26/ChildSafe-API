@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ChildSafe.Domain.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial_Commit : Migration
+    public partial class InitialCommit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -159,7 +159,7 @@ namespace ChildSafe.Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Student",
+                name: "Students",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -171,9 +171,9 @@ namespace ChildSafe.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Student", x => x.Id);
+                    table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Student_AspNetUsers_ParentId",
+                        name: "FK_Students_AspNetUsers_ParentId",
                         column: x => x.ParentId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -226,8 +226,8 @@ namespace ChildSafe.Domain.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Student_ParentId",
-                table: "Student",
+                name: "IX_Students_ParentId",
+                table: "Students",
                 column: "ParentId");
         }
 
@@ -250,7 +250,7 @@ namespace ChildSafe.Domain.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Student");
+                name: "Students");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
