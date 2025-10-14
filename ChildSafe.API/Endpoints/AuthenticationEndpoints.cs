@@ -1,4 +1,4 @@
-﻿using ChildSafe.API.Dtos;
+﻿using ChildSafe.Application.Dtos;
 using ChildSafe.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
@@ -78,7 +78,8 @@ namespace ChildSafe.API.Endpoints
             {
                 var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
                 return Results.Ok(new { UserId = userId });
-            }).RequireAuthorization("AdminOnly")
+            })
+                //.RequireAuthorization("AdminOnly")
             .WithTags(endpointGroup);
 
             app.MapGet("/auth-users", (UserManager<AppUser> userManager) =>

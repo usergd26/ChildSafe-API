@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Infrastructure", "04 -
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildSafe.API", "ChildSafe.API\ChildSafe.API.csproj", "{CF26DFF0-52D5-4BF1-91EC-2E303A9FC2FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildSafe.Services", "ChildSafe.Services\ChildSafe.Services.csproj", "{DC478905-05A6-460A-860A-A6644248E50B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildSafe.Application", "ChildSafe.Services\ChildSafe.Application.csproj", "{DC478905-05A6-460A-860A-A6644248E50B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildSafe.Domain", "ChildSafe.Domain\ChildSafe.Domain.csproj", "{F2BA794B-500D-48CE-89CE-E55B98CCAE89}"
 EndProject

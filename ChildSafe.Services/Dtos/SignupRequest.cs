@@ -1,6 +1,4 @@
-﻿using ChildSafe.Domain.Entities;
-
-namespace ChildSafe.API.Dtos
+﻿namespace ChildSafe.Application.Dtos
 {
     public class SignupRequest
     {
