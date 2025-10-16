@@ -1,10 +1,13 @@
 ﻿namespace ChildSafe.Domain.Entities
 {
-    public class Student
+    public class School
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string ParentId { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string AdminId { get; set; }
         public AppUser User { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }

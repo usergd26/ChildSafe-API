@@ -10,8 +10,14 @@ namespace ChildSafe.Infrastructure.DIContainer
     {
         public static void AddDependencyInjection(this IServiceCollection services)
         {
-             services.AddScoped<IStudentRepository,StudentRepository>();
-             services.AddScoped<IStudentService,StudentService>();
+            //Services
+            services.AddScoped<IStudentService,StudentService>();
+            services.AddScoped<ISchoolService,SchoolService>();
+
+
+            //Repositories
+            services.AddScoped<IStudentRepository,StudentRepository>();
+            services.AddScoped<ISchoolRepository,SchoolRepository>();
         }
     }
 }

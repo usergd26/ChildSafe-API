@@ -106,7 +106,7 @@ namespace ChildSafe.API.Endpoints
                 .WithTags(endpointGroup);
 
 
-            app.MapPost("/signup", async ([FromServices] UserManager<AppUser> userManager, [FromBody] SignupRequest request) =>
+            app.MapPost("/signup", async ([FromServices] UserManager<AppUser> userManager, [FromBody] UserDto request) =>
             {
                 if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
                     return Results.BadRequest(new { message = "Email and Password are required" });

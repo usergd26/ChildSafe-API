@@ -118,6 +118,7 @@ app.UseSwaggerUI(c =>
 
 app.MapAuthenticationEndpoints();
 app.MapStudentEndpoints();
+app.MapSchoolEndpoints();
 
 
 // Configure the HTTP request pipeline.

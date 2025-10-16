@@ -28,7 +28,9 @@ namespace ChildSafe.API.Endpoints
             app.MapPost("/students", async (StudentDto student, IStudentService studentService, ClaimsPrincipal user) =>
             {
                 var userId = user.FindFirstValue(ClaimTypes.NameIdentifier);
-                student.ParentId = userId;
+                if (userId is null && student.ParentId is null)
+                    return Results.BadRequest("ParentId is required.");
+                student.ParentId = userId is not null ? userId : student.ParentId;
                 await studentService.AddAsync(student);
                 return Results.Created($"/students/{student.Id}", student);
             })
