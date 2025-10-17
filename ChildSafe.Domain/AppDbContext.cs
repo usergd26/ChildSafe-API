@@ -11,6 +11,7 @@ namespace ChildSafe.Domain
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<School> Schools { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -63,6 +64,25 @@ namespace ChildSafe.Domain
                       .HasForeignKey(s => s.ParentId)
                       .OnDelete(DeleteBehavior.Restrict);
                 entity.HasQueryFilter(x => !x.IsDeleted);
+            });
+
+            modelBuilder.Entity<Attendance>(entity =>
+            {
+                entity.ToTable("Attendance", builder =>
+                {
+                    builder.IsTemporal(t =>
+                    {
+                        t.HasPeriodStart("ValidFrom");
+                        t.HasPeriodEnd("ValidTo");
+                        t.UseHistoryTable("AttendanceHistory");
+                    });
+                });
+
+                entity.HasKey(e => e.Id);
+
+                entity.HasOne(e => e.Student)
+                      .WithMany()
+                      .HasForeignKey(e => e.StudentId);
             });
         }
 

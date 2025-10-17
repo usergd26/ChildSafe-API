@@ -8,5 +8,6 @@
         public AppUser User { get; set; }
         public bool IsActive { get; set; }
         public bool IsDeleted { get; set; }
+        public ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
     }
 }

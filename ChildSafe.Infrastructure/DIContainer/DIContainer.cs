@@ -13,11 +13,13 @@ namespace ChildSafe.Infrastructure.DIContainer
             //Services
             services.AddScoped<IStudentService,StudentService>();
             services.AddScoped<ISchoolService,SchoolService>();
+            services.AddScoped<IAttendanceService,AttendanceService>();
 
 
             //Repositories
             services.AddScoped<IStudentRepository,StudentRepository>();
             services.AddScoped<ISchoolRepository,SchoolRepository>();
+            services.AddScoped<IAttendanceRepository,AttendanceRepository>();
         }
     }
 }
