@@ -27,6 +27,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
+builder.Services.AddCors( options =>
+{
+    options.AddPolicy(options.DefaultPolicyName, policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
@@ -115,6 +124,8 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
     c.RoutePrefix = string.Empty;
 });
+
+app.UseCors();
 
 app.MapAuthenticationEndpoints();
 app.MapStudentEndpoints();
